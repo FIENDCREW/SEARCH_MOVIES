@@ -12,9 +12,3 @@ export const CREATE_USER = 'CREATE_USER';
 export const createUserAction = (payload: IUsers): ICreateUserAction => {
   return { type: CREATE_USER, payload };
 };
-
-export const RESET_USER_STORE = 'RESET_USER_STORE';
-
-export const resetUserStoreAction = () => {
-  return { type: RESET_USER_STORE };
-};

@@ -1,4 +1,4 @@
-import { IFetchTodosActions, ITodosState, TodosActionTypes } from './interfaces';
+import { IFetchTodosActions, ITodosState, TodosActionType } from './interfaces';
 
 const initialState: ITodosState = {
   todosData: [],
@@ -11,11 +11,11 @@ export const TodosReducer = (
   action: IFetchTodosActions
 ): ITodosState => {
   switch (action.type) {
-    case TodosActionTypes.FETCH_TODOS:
+    case TodosActionType.FETCH_TODOS:
       return { loading: true, error: null, todosData: [] };
-    case TodosActionTypes.FETCH_TODOS_SUCCESS:
+    case TodosActionType.FETCH_TODOS_SUCCESS:
       return { loading: false, error: null, todosData: action.payload };
-    case TodosActionTypes.FETCH_TODOS_FAILURE:
+    case TodosActionType.FETCH_TODOS_FAILURE:
       return { loading: false, error: action.payload, todosData: [] };
     default:
       return state;

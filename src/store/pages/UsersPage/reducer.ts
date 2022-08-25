@@ -1,5 +1,6 @@
-import { RESET_USER_STORE } from './actions';
-import { IUsersState, UsersActionTypes } from './interfaces';
+import { IUsers } from '../../../interfaces/IUsers';
+import { CREATE_USER, SET_USERS_DATA } from './actions';
+import { IUsersState, UsersReducerAction } from './interfaces';
 
 const initialState: IUsersState = {
   usersData: [],
@@ -7,16 +8,15 @@ const initialState: IUsersState = {
   error: null,
 };
 
-export const UsersReducer = (state: IUsersState = initialState, action: any): IUsersState => {
+export const UsersReducer = (
+  state: IUsersState = initialState,
+  action: UsersReducerAction
+): IUsersState => {
   switch (action.type) {
-    case UsersActionTypes.FETCH_USERS:
-      return { ...state, loading: true };
-    case UsersActionTypes.FETCH_USERS_SUCCESS:
-      return { ...state, loading: false, usersData: [...action.payload] };
-    case UsersActionTypes.FETCH_USERS_FAILURE:
-      return { ...state, loading: false, error: action.payload };
-    case RESET_USER_STORE:
-      return initialState;
+    case CREATE_USER:
+      return { ...state, usersData: [...state.usersData, action.payload as IUsers] };
+    case SET_USERS_DATA:
+      return { ...state, usersData: action.payload as IUsers[] }; // кастинг типов
     default:
       return state;
   }

@@ -1,0 +1,10 @@
+.page_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  background-color: rgba(175, 175, 175, 0.6);
+  box-shadow: rgba(175, 175, 175, 0.6);
+  box-shadow: 10px  10px 10px 0 #ccc;
+  border-radius: 0 5px;
+}

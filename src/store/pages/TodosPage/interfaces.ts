@@ -1,3 +1,5 @@
+import { BlobOptions } from 'buffer';
+
 export interface ITodosState {
   todosData: ITodo[];
   loading: boolean;
@@ -11,23 +13,22 @@ export interface ITodo {
   completed: boolean;
 }
 
-export enum TodosActionTypes {
+export enum TodosActionType {
   FETCH_TODOS = 'FETCH_TODOS',
   FETCH_TODOS_SUCCESS = 'FETCH_TODOS_SUCCESS',
   FETCH_TODOS_FAILURE = 'FETCH_TODOS_FAILURE',
 }
 
 export interface IFetchTodosAction {
-  type: TodosActionTypes.FETCH_TODOS;
+  type: TodosActionType.FETCH_TODOS;
 }
-
 export interface IFetchTodosSuccessAction {
-  type: TodosActionTypes.FETCH_TODOS_SUCCESS;
+  type: TodosActionType.FETCH_TODOS_SUCCESS;
   payload: ITodo[];
 }
 
 export interface IFetchTodosFailureAction {
-  type: TodosActionTypes.FETCH_TODOS_FAILURE;
+  type: TodosActionType.FETCH_TODOS_FAILURE;
   payload: string;
 }
 
