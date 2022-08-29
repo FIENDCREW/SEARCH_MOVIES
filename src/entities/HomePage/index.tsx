@@ -8,18 +8,29 @@ import { addMovies } from 'store/pages/MoviesPage/movieSlice';
 const HomePage = () => {
   const movieText = 'Harry';
   const dispatch = useDispatch();
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const response = await $api
-        .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)
 
-        .catch((err) => {
-          console.log('Err', err);
-        });
-      dispatch(addMovies(response.data));
-    };
-    fetchMovies();
+  const getMovies = async (url: string) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    dispatch(addMovies(data));
+  };
+
+  useEffect(() => {
+    getMovies(APIKey);
   }, []);
+  
+  // useEffect(() => {
+  //   const fetchMovies = async () => {
+  //     const response = await $api
+  //       .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)
+
+  //       .catch((err) => {
+  //         console.log('Err', err);
+  //       });
+  //     dispatch(addMovies(response.data));
+  //   };
+  //   fetchMovies();
+  // }, []);
   return (
     <div>
       <div>HomePage</div>

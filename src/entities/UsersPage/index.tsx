@@ -7,7 +7,6 @@ import { getUsersData } from '../../store/pages/UsersPage/selectors';
 import UsersPageComponent from './components/UsersPageComponent';
 
 const UsersPage = () => {
-  // const [usersData, setUsersData] = useState<IUsers[] | null>(null);
   const dispatch = useDispatch();
   const usersData = useSelector(getUsersData);
 
@@ -17,7 +16,6 @@ const UsersPage = () => {
   const getData = async (url: string) => {
     const response = await fetch(url);
     const data = await response.json();
-    // setUsersData(data);
     dispatch(setUsersDataAction(data));
   };
 

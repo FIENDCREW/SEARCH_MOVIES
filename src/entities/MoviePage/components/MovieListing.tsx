@@ -9,7 +9,7 @@ const MovieListing = () => {
   renderMovies =
     movies.Responce === 'True' ? (
       movies.Search.map((movie: any, index: React.Key | null | undefined) => {
-        <MovieCrad key={index} movie={movie} />;
+        <MovieCrad key={index} />;
       })
     ) : (
       <div>
