@@ -3,37 +3,22 @@ import path from 'path';
 export const sidebarConfig = [
   {
     id: 1,
-    name: 'Страница пользователей',
-    path: '/users_page',
+    name: 'Главная',
+    path: '/home_page',
   },
   {
     id: 2,
-    name: 'Тестовая страница',
-    path: '/test_page',
+    name: 'Поиск',
+    path: '/search-page',
   },
   {
     id: 3,
-    name: 'Spisok todo',
+    name: 'Избраное',
     path: '/todos_page',
   },
   {
     id: 4,
-    name: 'Use Ref',
+    name: 'Напоминания',
     path: '/use_ref',
-  },
-  {
-    id: 5,
-    name: 'Use Callback',
-    path: '/use_callback',
-  },
-  {
-    id: 6,
-    name: 'Use Memo',
-    path: '/use_memo',
-  },
-  {
-    id: 7,
-    name: 'Use Context',
-    path: '/use_context',
   },
 ];
