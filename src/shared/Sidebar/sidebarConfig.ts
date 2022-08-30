@@ -9,16 +9,11 @@ export const sidebarConfig = [
   {
     id: 2,
     name: 'Поиск',
-    path: '/search-page',
+    path: '/search',
   },
   {
     id: 3,
     name: 'Избраное',
-    path: '/todos_page',
-  },
-  {
-    id: 4,
-    name: 'Напоминания',
-    path: '/use_ref',
+    path: '/favorites',
   },
 ];

@@ -1,6 +1,6 @@
-import { IUsersState } from './pages/UsersPage/interfaces';
+// import { IUsersState } from './pages/UsersPage/interfaces';
 
-export interface IStore {
-  users: IUsersState;
-  todos: IUsersState;
-}
+// export interface IStore {
+//   users: IUsersState;
+//   todos: IUsersState;
+// }

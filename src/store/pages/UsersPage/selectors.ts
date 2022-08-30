@@ -1,3 +1,3 @@
-import { IStore } from '../../i';
+// import { IStore } from '../../i';
 
-export const getUsersData = (state: IStore) => state.users.usersData;
+// export const getUsersData = (state: IStore) => state.users.usersData;

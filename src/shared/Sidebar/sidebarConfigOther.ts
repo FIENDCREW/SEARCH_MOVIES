@@ -4,16 +4,16 @@ export const sidebarConfigOther = [
   {
     id: 1,
     name: 'Плей-лист',
-    path: '/use_callback',
+    path: '/play_list',
   },
   {
     id: 2,
     name: 'Прямой эфир',
-    path: '/use_memo',
+    path: '/live',
   },
   {
     id: 3,
     name: 'Настройки',
-    path: '/use_context',
+    path: '/settings',
   },
 ];
