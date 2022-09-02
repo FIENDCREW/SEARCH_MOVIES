@@ -2,22 +2,23 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './assets/scss/normalize.scss';
 import PageLayout from './layouts/PageLayout';
-import HomePage from 'entities/HomePage';
-import Search from 'antd/lib/transfer/search';
 import PlayList from 'entities/PlayList/PlayList';
 import Live from 'entities/Live/Live';
 import Settings from 'entities/Settings/Settings';
-import MovieDetail from 'entities/MoviePage/components/MovieDetail';
+import MovieDetail from 'entities/MovieHomePage/components/MovieDetail';
+import MoviePage from 'entities/MovieHomePage';
+import Search from 'entities/Search/Search';
+import MovieBackUpPage from 'entities/MovieHomePage/components/MovieBackUpPage';
 
 const App = () => {
   return (
     <PageLayout>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="home_page" element={<HomePage />} />
-        <Route path="search" element={<Search />} />
+        <Route path="/" element={<MoviePage />} />
+        <Route path="movie_home_page" element={<MoviePage />} />
+        <Route path="movie_home_page/:id" element={<MovieBackUpPage />} />
         <Route path="favorites" element={<MovieDetail />} />
-        <Route path="search-page" element={<Search />} />
+        <Route path="search" element={<Search />} />
         <Route path="play_list" element={<PlayList />} />
         <Route path="live" element={<Live />} />
         <Route path="settings" element={<Settings />} />

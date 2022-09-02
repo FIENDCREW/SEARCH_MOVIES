@@ -1,6 +1,5 @@
-// import { IUsersState } from './pages/UsersPage/interfaces';
+import { IMoviesState } from './pages/MoviesPage/interfaces';
 
-// export interface IStore {
-//   users: IUsersState;
-//   todos: IUsersState;
-// }
+export interface IStore {
+  movies: IMoviesState;
+}

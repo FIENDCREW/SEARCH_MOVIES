@@ -4,7 +4,7 @@ export const sidebarConfig = [
   {
     id: 1,
     name: 'Главная',
-    path: '/home_page',
+    path: '/movie_home_page',
   },
   {
     id: 2,
