@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { IMovies } from 'interfaces/IMovies';
 import MovieCrad from './MovieCrad';
 import PageNotFound from 'entities/PageNotFound/PageNotFound';
+import { IMovies } from 'interfaces/IMovies';
 import Pagination from '../../../shared/Pagination/index';
 
 interface IProps {

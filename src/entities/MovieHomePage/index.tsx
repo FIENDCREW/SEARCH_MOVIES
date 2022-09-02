@@ -10,6 +10,7 @@ import MovieListing from './components/MovieListing';
 const MoviePage = () => {
   const dispatch = useDispatch();
   const moviesData = useSelector(getMoviesData);
+  console.log(moviesData);
 
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     getData(moviesUrl);
-  });
+  }, []);
   return !moviesData ? <div>Loading...</div> : <MovieListing movieDataAttr={moviesData} />;
 };
 
