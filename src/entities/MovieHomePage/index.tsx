@@ -18,7 +18,7 @@ const MoviePage = () => {
   const getData = async (baseUrl: string) => {
     const responce = await fetch(baseUrl);
     const data = await responce.json();
-    dispatch(setMoviesDataAction(data));
+    dispatch(setMoviesDataAction(data.Search));
   };
 
   useEffect(() => {

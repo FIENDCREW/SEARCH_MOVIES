@@ -15,10 +15,10 @@ const MovieListing: FC<IProps> = ({ movieDataAttr }) => {
       <div>
         {movieDataAttr.length ? (
           movieDataAttr.map((movie) => {
-            const { id, Title, Poster, Year } = movie;
+            const { id, imdbID, Title, Poster, Year } = movie;
             return (
-              <React.Fragment key={`MovieId:${id}`}>
-                <MovieCrad id={id || 0} Poster={Poster} Title={Title} Year={Year} />
+              <React.Fragment key={`MovieId:${imdbID}`}>
+                <MovieCrad id={id || 0} Poster={Poster} Title={Title} Year={Year} imdbID={imdbID} />
               </React.Fragment>
             );
           })
