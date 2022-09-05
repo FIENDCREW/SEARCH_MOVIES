@@ -3,7 +3,7 @@ import MovieCrad from './MovieCrad';
 import PageNotFound from 'entities/PageNotFound/PageNotFound';
 import { IMovies } from 'interfaces/IMovies';
 import Pagination from '../../../shared/Pagination/index';
-
+import style from '../MovieHomePage.module.scss';
 interface IProps {
   movieDataAttr: IMovies[];
 }
@@ -12,7 +12,7 @@ const MovieListing: FC<IProps> = ({ movieDataAttr }) => {
   return (
     <div>
       <p>List Movies:</p>
-      <div>
+      <div className={style.movie_list}>
         {movieDataAttr.length ? (
           movieDataAttr.map((movie) => {
             const { id, imdbID, Title, Poster, Year } = movie;
@@ -27,6 +27,7 @@ const MovieListing: FC<IProps> = ({ movieDataAttr }) => {
             <PageNotFound />
           </div>
         )}
+        <hr />
         <Pagination limit={4} itemsAmount={movieDataAttr.length} />
       </div>
     </div>

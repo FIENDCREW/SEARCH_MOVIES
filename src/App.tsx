@@ -7,8 +7,8 @@ import Live from 'entities/Live/Live';
 import Settings from 'entities/Settings/Settings';
 import MovieDetail from 'entities/MovieHomePage/components/MovieDetail';
 import MoviePage from 'entities/MovieHomePage';
-import Search from 'entities/Search/Search';
 import MovieBackUpPage from 'entities/MovieHomePage/components/MovieBackUpPage';
+import SearchPage from 'entities/Search';
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
         <Route path="movie_home_page" element={<MoviePage />} />
         <Route path="movie_home_page/:id" element={<MovieBackUpPage />} />
         <Route path="favorites" element={<MovieDetail />} />
-        <Route path="search" element={<Search />} />
+        <Route path="search" element={<SearchPage />} />
         <Route path="play_list" element={<PlayList />} />
         <Route path="live" element={<Live />} />
         <Route path="settings" element={<Settings />} />

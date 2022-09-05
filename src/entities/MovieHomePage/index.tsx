@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getMoviesData } from 'store/pages/MoviesPage/selectors';
 import { setMoviesDataAction } from 'store/pages/MoviesPage/actions';
@@ -10,7 +9,6 @@ import MovieListing from './components/MovieListing';
 const MoviePage = () => {
   const dispatch = useDispatch();
   const moviesData = useSelector(getMoviesData);
-  console.log(moviesData);
 
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
@@ -33,6 +31,7 @@ const MoviePage = () => {
   useEffect(() => {
     getData(moviesUrl);
   }, []);
+
   return !moviesData ? <div>Loading...</div> : <MovieListing movieDataAttr={moviesData} />;
 };
 

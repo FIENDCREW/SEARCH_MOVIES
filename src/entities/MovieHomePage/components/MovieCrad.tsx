@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-
+import style from '../MovieHomePage.module.scss';
 interface IProps {
   id: number;
   Poster: string;
@@ -11,11 +11,20 @@ interface IProps {
 
 const MovieCrad: FC<IProps> = ({ id, imdbID, Poster, Title, Year }) => {
   return (
-    <div>
-      <img src={Poster} alt={Title} />
-      <h4>{Title}</h4>
-      <p>{Year}</p>
-      <Link to={`${imdbID}`}>INFO IN MOVIE</Link>
+    <div className={style.movie_card}>
+      <Link to={`${imdbID}`}>
+        <div className={style.movie_inner}>
+          <div className={style.movie_top}>
+            <img src={Poster} alt={Title} />
+          </div>
+          <div className={style.movie_bottom}>
+            <div className={style.movie_info}>
+              <h4>{Title}</h4>
+              <p>{Year}</p>
+            </div>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };
