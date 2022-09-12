@@ -1,10 +1,12 @@
+@import '../../assets/scss/normalize.scss';
 .sidebar_wrapper {
   box-sizing: border-box;
-  height: 100%;
+  // height: 100vh;
   width: 280px;
   padding: 60px 0;
-  background: rgba(99, 96, 96, 0.5);
+  background: $secondary-color;
   padding-left: 15px;
+  border-right: 0.01px solid;
 }
 
 .sidebar_menu {
@@ -21,5 +23,5 @@
 }
 
 .active {
-  font-weight: 700;
+  font-weight: 800;
 }

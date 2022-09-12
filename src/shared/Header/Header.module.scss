@@ -1,8 +1,10 @@
+@import '../../assets/scss/normalize.scss';
 .page_header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  font-size: 20px;
   min-height: 60px;
-  background-color: rgba(46, 46, 46, 0.6);
-  border-radius: 0 5px;
+  background-color: $secondary-color;
+  border-bottom: 0.01px solid;
 }

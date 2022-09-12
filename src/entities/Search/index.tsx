@@ -1,26 +1,31 @@
-import React, { useEffect } from 'react';
-import { infoUrl } from 'api/constantes';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { setSearchDataAction } from 'store/pages/SearchPage/actions';
-import { getSearchData } from 'store/pages/SearchPage/selectors';
-import Search from './componentes/Search';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
+import React, { useEffect, useState } from 'react';
+import { changePage, pageSelector, searchMovie } from 'store/pages/movieSlice';
+import { searchUrl } from 'api/constantes';
 
 const SearchPage = () => {
-  const dispatch = useDispatch();
-  const seacrchsData = useSelector(getSearchData);
-
-  const getSearch = async (baseUrl: string) => {
-    const responce = await fetch(baseUrl);
-    const search = await responce.json();
-    dispatch(setSearchDataAction(search));
+  const dispatch = useAppDispatch();
+  const page = useAppSelector(pageSelector);
+  const [value, setValue] = useState<string>('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.currentTarget.value);
   };
 
   useEffect(() => {
-    getSearch(infoUrl);
-  }, []);
+    const timer = setTimeout(() => {
+      if (value) {
+        dispatch(searchMovie(searchUrl(value, page)));
+      }
+    }, 200);
 
-  return !seacrchsData ? <div>not found</div> : <Search Title={''} />;
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, page]);
+  useEffect(() => {
+    dispatch(changePage(1));
+  }, [value]);
+  return <input onChange={handleChange} />;
 };
 
 export default SearchPage;

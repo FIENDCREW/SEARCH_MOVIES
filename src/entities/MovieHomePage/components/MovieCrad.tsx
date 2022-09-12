@@ -13,7 +13,7 @@ const MovieCrad: FC<IProps> = ({ id, imdbID, Poster, Title, Year }) => {
   return (
     <div className={style.movie_card}>
       <Link to={`${imdbID}`}>
-        <div className={style.movie_inner}>
+        <div className={style.movie_iner}>
           <div className={style.movie_top}>
             <img src={Poster} alt={Title} />
           </div>

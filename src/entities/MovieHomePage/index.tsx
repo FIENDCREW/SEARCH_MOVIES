@@ -1,38 +1,22 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { getMoviesData } from 'store/pages/MoviesPage/selectors';
-import { setMoviesDataAction } from 'store/pages/MoviesPage/actions';
-import { moviesUrl } from 'api/constantes';
+import React from 'react';
+import Pagination from 'shared/Pagination/Pagination';
+import { useAppSelector } from 'store/hooks';
+import { moviesSelector, totalResultsSelector } from 'store/pages/movieSlice';
 import MovieListing from './components/MovieListing';
 
-const MoviePage = () => {
-  const dispatch = useDispatch();
-  const moviesData = useSelector(getMoviesData);
+const MovieHomePage = () => {
+  const moviesData = useAppSelector(moviesSelector);
+  const totalResults = useAppSelector(totalResultsSelector);
 
-  const { pathname, search } = useLocation();
-  const navigate = useNavigate();
-
-  const getData = async (baseUrl: string) => {
-    const responce = await fetch(baseUrl);
-    const data = await responce.json();
-    dispatch(setMoviesDataAction(data.Search));
-  };
-
-  useEffect(() => {
-    if (pathname === '/') {
-      navigate('/movie_home_page');
-    }
-    if (!search) {
-      navigate('?page=1');
-    }
-  }, [pathname, navigate, search]);
-
-  useEffect(() => {
-    getData(moviesUrl);
-  }, []);
-
-  return !moviesData ? <div>Loading...</div> : <MovieListing movieDataAttr={moviesData} />;
+  return !moviesData ? (
+    <div>Введи название фильма в строку поиска</div>
+  ) : (
+    <>
+      <MovieListing movieDataAttr={moviesData} />
+      <hr />
+      <Pagination limit={10} totalResults={totalResults} />
+    </>
+  );
 };
 
-export default MoviePage;
+export default MovieHomePage;

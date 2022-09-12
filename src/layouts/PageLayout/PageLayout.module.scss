@@ -1,10 +1,12 @@
+@import '../../assets/scss/normalize.scss';
 .page_wrapper {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
-  height: 100vh;
-  flex: 1 1 auto;
-  color: #fff;
-  background-color: rgba(46, 46, 46, 0.4);
+  height: 100%;
+  min-height: 1500px;
+  flex: 0 1 auto;
+  color: $font-primary;
+  background-color: $primary-color;
 }
 
 .section_wrapper {
@@ -15,5 +17,5 @@
 
 .content_wrapper {
   padding: 10px;
-  height: 100vh;
+  height: 100%;
 }
