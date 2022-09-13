@@ -11,7 +11,7 @@
   padding-left: 15px;
   border-radius: 42px;
   border: 1px solid #324b4e;
-  background: #cbd6ee;
+  background: #fff;
   outline: none;
   position: relative;
   transition: 0.3s linear;
@@ -21,4 +21,5 @@
 }
 input[placeholder] {
   font-size: 15px;
+  color: #324b4e;
 }
