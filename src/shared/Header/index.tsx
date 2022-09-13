@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchPage from 'entities/Search';
+import SearchPage from 'entities/Search/SearchPage';
 import style from './Header.module.scss';
 
 const Header = () => {

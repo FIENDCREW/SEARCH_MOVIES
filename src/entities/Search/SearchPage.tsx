@@ -1,7 +1,8 @@
-import { useAppDispatch, useAppSelector } from 'store/hooks';
 import React, { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { changePage, pageSelector, searchMovie } from 'store/pages/movieSlice';
 import { searchUrl } from 'api/constantes';
+import style from './SearchPage.module.scss';
 
 const SearchPage = () => {
   const dispatch = useAppDispatch();
@@ -25,7 +26,11 @@ const SearchPage = () => {
   useEffect(() => {
     dispatch(changePage(1));
   }, [value]);
-  return <input onChange={handleChange} />;
+  return (
+    <div className={style.search_input}>
+      <input onChange={handleChange} placeholder="Поиск..." />
+    </div>
+  );
 };
 
 export default SearchPage;

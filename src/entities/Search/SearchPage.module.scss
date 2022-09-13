@@ -1,0 +1,24 @@
+.search_input {
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+.search_input input {
+  width: 150px;
+  height: 25px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 1px solid #324b4e;
+  background: #cbd6ee;
+  outline: none;
+  position: relative;
+  transition: 0.3s linear;
+}
+.search_input input:focus {
+  width: 200px;
+}
+input[placeholder] {
+  font-size: 15px;
+}
