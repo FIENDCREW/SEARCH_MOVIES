@@ -1,7 +1,12 @@
 import React from 'react';
+import Error from 'shared/404/Error';
 
 const PlayList = () => {
-  return <div>Play List в разработке! Извинте за неудобства</div>;
+  return (
+    <div>
+      <Error />
+    </div>
+  );
 };
 
 export default PlayList;

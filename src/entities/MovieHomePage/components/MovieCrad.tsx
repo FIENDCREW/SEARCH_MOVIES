@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import style from '../MovieHomePage.module.scss';

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
@@ -15,10 +16,11 @@ const Pagination: FC<IProps> = ({ limit, totalResults }) => {
   const page = useAppSelector(pageSelector);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-shadow
   const handlePages = (page: number) => {
     dispatch(changePage(page));
   };
-  useEffect(() => navigate(`?page=${page}`), [page]);
+  useEffect(() => navigate(`?page=${page}`), [navigate, page]);
   for (let i = 1; i <= pagesAmount; i++) {
     pagesArray.push(i);
   }
