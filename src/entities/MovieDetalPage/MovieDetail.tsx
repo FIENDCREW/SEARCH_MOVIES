@@ -7,7 +7,7 @@ import style from './MovieDetal.module.scss';
 
 const MovieDetail = () => {
   const params = useParams();
-  const id = params.id;
+  const { id } = params;
   const dispatch = useAppDispatch();
   const fullMoviesData = useAppSelector(movieFullSelector);
   console.log(fullMoviesData);
