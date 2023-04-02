@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './assets/scss/normalize.scss';
 import MovieHomePage from 'entities/MovieHomePage';
@@ -10,26 +10,30 @@ import Favorites from 'entities/Favorites/Favorites';
 import Live from 'entities/Live/Live';
 import Dashboards from 'entities/Dashboardsrc/Dashboards';
 import Preferences from 'entities/Preferences/Preferences';
-import Login from 'entities/Login/Login';
+//import Login from 'entities/Login/Login';
 
-const setToken = (userToken: any) => {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-const getToken = () => {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
+// const setToken = (userToken: any) => {
+//   sessionStorage.setItem('token', JSON.stringify(userToken));
+// }
+// const getToken = () => {
+//   const tokenString: string | null = sessionStorage.getItem('token');
+//   if (typeof tokenString === "string") {
+//     const userToken = JSON.parse(tokenString);
+//   }
+//   }
+//   return userToken?.token
+// }
+// const token = getToken();
+// // @ts-ignore
+// if (!token) {
+//   return <Login setToken={setToken} />
+//}
+// const [token, setToken] = useState();
+// if (!token) {
+//   return <Login setToken={setToken} />
+// }
 
 const App = () => {
-  const token = getToken();
-  if (!token) {
-    return <Login setToken={setToken} />
-  }
-  // const [token, setToken] = useState();
-  // if (!token) {
-  //   return <Login setToken={setToken} />
-  // }
   return (
     <PageLayout>
       <Routes>
@@ -40,7 +44,7 @@ const App = () => {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/live" element={<Live />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/dashoards" element={<Dashboards />} />
+        <Route path="/dashboards" element={<Dashboards />} />
         <Route path="/preferences" element={<Preferences />} />
       </Routes>
     </PageLayout>
